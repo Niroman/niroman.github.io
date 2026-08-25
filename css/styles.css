@@ -98,6 +98,15 @@ html {
     color: var(--primary-color);
 }
 
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -280,6 +289,7 @@ html {
 /* Section Styles */
 section {
     padding: 35px 0;
+    scroll-margin-top: 80px;
 }
 
 .section-title {
@@ -1192,6 +1202,327 @@ section {
     }
 }
 
+/* Professional Journey Section */
+.journey {
+    background-color: var(--bg-light);
+}
+
+.journey-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.journey-group {
+    margin-bottom: 2.5rem;
+}
+
+.journey-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.journey-group-header.education-header {
+    color: #10b981;
+    border-bottom-color: #10b981;
+}
+
+.journey-group-header i {
+    font-size: 1.25rem;
+}
+
+.journey-item {
+    margin-bottom: 1rem;
+}
+
+.journey-item.clickable {
+    cursor: pointer;
+}
+
+.journey-item.clickable .journey-content:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+}
+
+.journey-content {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border-left: 3px solid var(--primary-color);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.journey-content.education-content {
+    border-left-color: #10b981;
+}
+
+.journey-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.journey-icon.education-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.journey-icon i {
+    font-size: 1rem;
+    color: white;
+}
+
+.journey-info {
+    flex: 1;
+}
+
+.journey-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.3;
+}
+
+.journey-org {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.journey-year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 0.35rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.journey-arrow {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    margin-left: 0.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--text-dark);
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+#modalAchievements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#modalAchievements li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-light);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+#modalAchievements li:last-child {
+    border-bottom: none;
+}
+
+#modalAchievements li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Education Section */
+.education {
+    background-color: var(--bg-white);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-color: #10b981;
+}
+
+.education-header {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.education-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.education-icon i {
+    font-size: 1.75rem;
+    color: white;
+}
+
+.education-details h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.education-university {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #10b981;
+    margin-bottom: 0.5rem;
+}
+
+.education-year {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.education-year i {
+    color: #10b981;
+}
+
+.education-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.education-highlights li {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.education-highlights li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 /* Certificates Section */
 .certificates {
     background-color: var(--bg-white);
@@ -1200,15 +1531,15 @@ section {
 .certificates-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
+    gap: 1.5rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .certificate-card {
     background: white;
-    border-radius: 20px;
-    padding: 2rem;
+    border-radius: 16px;
+    padding: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
     border: 2px solid transparent;
@@ -1240,25 +1571,25 @@ section {
 }
 
 .certificate-icon {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    border-radius: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
 }
 
 .certificate-icon i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
 }
 
 .certificate-card h3 {
-    font-size: 1.35rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
     color: var(--text-dark);
     font-weight: 700;
     line-height: 1.4;
@@ -1267,14 +1598,14 @@ section {
 .certificate-issuer {
     color: var(--primary-color);
     font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.4rem;
 }
 
 .certificate-date {
     color: var(--text-lighter);
-    font-size: 0.875rem;
-    margin-bottom: 1.25rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .certificate-link {
@@ -1652,6 +1983,47 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-group {
+        margin-bottom: 2rem;
+    }
+
+    .journey-group-header {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .journey-content {
+        padding: 0.875rem 1rem;
+        flex-wrap: wrap;
+    }
+
+    .journey-info {
+        flex: 1 1 100%;
+    }
+
+    .journey-year {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .journey-arrow {
+        display: none;
+    }
+
+    .modal-content {
+        margin: 20% auto;
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -1894,6 +2266,37 @@ section {
     }
 
     .beyond-tech-grid {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+
+    .journey-item {
+        margin-bottom: 0.875rem;
+    }
+
+    .journey-info h3 {
+        font-size: 0.95rem;
+    }
+
+    .journey-org {
+        font-size: 0.8rem;
+    }
+
+    .journey-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .journey-icon i {
+        font-size: 0.875rem;
+    }
+
+    .education-grid {
         grid-template-columns: 1fr;
         max-width: 700px;
     }
