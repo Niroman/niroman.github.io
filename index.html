@@ -21,10 +21,11 @@
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Background</a>
                 <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Beyond Tech</a>
                 <a href="#challenges" class="nav-link">Engineering</a>
                 <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#beyond-tech" class="nav-link">Beyond Tech</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle" id="navToggle">
@@ -145,6 +146,94 @@
         </div>
     </section>
 
+    <!-- Professional Journey Section -->
+    <section id="experience" class="journey">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="journey-timeline">
+                <!-- Professional Experience Group -->
+                <div class="journey-group">
+                    <div class="journey-group-header">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Professional Experience</span>
+                    </div>
+
+                    <div class="journey-item clickable" onclick="openModal('qualcomm')">
+                        <div class="journey-content">
+                            <div class="journey-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="journey-info">
+                                <h3>Senior Cellular Systems Test Engineer</h3>
+                                <p class="journey-org">Qualcomm</p>
+                            </div>
+                            <div class="journey-year">2021 - Present</div>
+                            <i class="fas fa-chevron-right journey-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div class="journey-item clickable" onclick="openModal('federated')">
+                        <div class="journey-content">
+                            <div class="journey-icon">
+                                <i class="fas fa-signal"></i>
+                            </div>
+                            <div class="journey-info">
+                                <h3>Software Engineer - Wireless Algorithm Development</h3>
+                                <p class="journey-org">Federated Wireless</p>
+                            </div>
+                            <div class="journey-year">2019 - 2021</div>
+                            <i class="fas fa-chevron-right journey-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Group -->
+                <div class="journey-group">
+                    <div class="journey-group-header education-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </div>
+
+                    <div class="journey-item">
+                        <div class="journey-content education-content">
+                            <div class="journey-icon education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="journey-info">
+                                <h3>MS in Telecommunications</h3>
+                                <p class="journey-org">University of Maryland, College Park</p>
+                            </div>
+                            <div class="journey-year">2020</div>
+                        </div>
+                    </div>
+
+                    <div class="journey-item">
+                        <div class="journey-content education-content">
+                            <div class="journey-icon education-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="journey-info">
+                                <h3>BE in Electronics and Communication</h3>
+                                <p class="journey-org">Anna University, India</p>
+                            </div>
+                            <div class="journey-year">2016</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for achievements -->
+    <div id="achievementModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalCompany"></p>
+            <ul id="modalAchievements"></ul>
+        </div>
+    </div>
+
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
@@ -204,7 +293,7 @@
                     </div>
                 </div>
 
-                <!-- Learning -->
+                <!-- Currently Learning -->
                 <div class="skill-row learning-row">
                     <div class="skill-row-header">
                         <i class="fas fa-rocket"></i>
@@ -218,67 +307,6 @@
                         <span class="skill-badge-learning">Tool Orchestration</span>
                         <span class="skill-badge-learning">RAG</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Beyond Technology Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Beyond Technology</h2>
-            <div class="beyond-tech-grid">
-                <div class="beyond-tech-card">
-                    <div class="beyond-tech-icon">
-                        <i class="fas fa-skiing"></i>
-                    </div>
-                    <h3>Skiing Adventures</h3>
-                    <p class="beyond-tech-subtitle">West Coast Ski Challenge</p>
-                    <p class="beyond-tech-description">
-                        I am passionate about skiing and spend winter seasons carving through fresh powder.
-                        I have set an ambitious goal to ski down all the major ski resorts along the West Coast
-                        before 2028, combining my love for adventure with the thrill of exploring new mountains
-                        and challenging terrain.
-                    </p>
-                </div>
-
-                <div class="beyond-tech-card">
-                    <div class="beyond-tech-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Community Building & Volunteer Work</h3>
-                    <p class="beyond-tech-subtitle">Board Member, <a href="https://alumni.umd.edu/get-involved/san-diego-terps-alumni-network" target="_blank" style="color: var(--primary-color); text-decoration: none;">SD Terps Alumni Network</a></p>
-                    <p class="beyond-tech-description">
-                        I actively contribute to building vibrant communities through volunteer work. As a Board
-                        Member of SD Terps (San Diego Terps Alumni Network), I organize engaging social events
-                        including Pickleball tournaments, hiking excursions, and networking gatherings.
-                    </p>
-                </div>
-
-                <div class="beyond-tech-card">
-                    <div class="beyond-tech-icon">
-                        <i class="fas fa-basketball-ball"></i>
-                    </div>
-                    <h3>Sports Enthusiasm</h3>
-                    <p class="beyond-tech-subtitle">Active Player & Avid Fan</p>
-                    <p class="beyond-tech-description">
-                        Basketball is my go-to sport for staying active and competitive. As an avid sports fan,
-                        I follow Formula 1 racing, Cricket, and the Olympics with great enthusiasm. I am particularly
-                        excited for the 2028 Los Angeles Olympics.
-                    </p>
-                </div>
-
-                <div class="beyond-tech-card">
-                    <div class="beyond-tech-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>2026 Goals</h3>
-                    <p class="beyond-tech-subtitle">Personal Challenges & Growth</p>
-                    <ul class="beyond-tech-list">
-                        <li class="completed"><i class="fas fa-check-circle"></i> Solved Rubik's Cube under 2 minutes ✓</li>
-                        <li class="in-progress"><i class="fas fa-chart-line"></i> Learning Trading to become a financial wizard</li>
-                        <li class="completed"><i class="fas fa-check-circle"></i> Attended CES (Consumer Electronics Show) ✓</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -451,6 +479,67 @@
         </div>
     </section>
 
+    <!-- Beyond Technology Section -->
+    <section id="beyond-tech" class="beyond-tech">
+        <div class="container">
+            <h2 class="section-title">Beyond Technology</h2>
+            <div class="beyond-tech-grid">
+                <div class="beyond-tech-card">
+                    <div class="beyond-tech-icon">
+                        <i class="fas fa-skiing"></i>
+                    </div>
+                    <h3>Skiing Adventures</h3>
+                    <p class="beyond-tech-subtitle">West Coast Ski Challenge</p>
+                    <p class="beyond-tech-description">
+                        I am passionate about skiing and spend winter seasons carving through fresh powder.
+                        I have set an ambitious goal to ski down all the major ski resorts along the West Coast
+                        before 2028, combining my love for adventure with the thrill of exploring new mountains
+                        and challenging terrain.
+                    </p>
+                </div>
+
+                <div class="beyond-tech-card">
+                    <div class="beyond-tech-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building & Volunteer Work</h3>
+                    <p class="beyond-tech-subtitle">Board Member, <a href="https://alumni.umd.edu/get-involved/san-diego-terps-alumni-network" target="_blank" style="color: var(--primary-color); text-decoration: none;">SD Terps Alumni Network</a></p>
+                    <p class="beyond-tech-description">
+                        I actively contribute to building vibrant communities through volunteer work. As a Board
+                        Member of SD Terps (San Diego Terps Alumni Network), I organize engaging social events
+                        including Pickleball tournaments, hiking excursions, and networking gatherings.
+                    </p>
+                </div>
+
+                <div class="beyond-tech-card">
+                    <div class="beyond-tech-icon">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <h3>Sports Enthusiasm</h3>
+                    <p class="beyond-tech-subtitle">Active Player & Avid Fan</p>
+                    <p class="beyond-tech-description">
+                        Basketball is my go-to sport for staying active and competitive. As an avid sports fan,
+                        I follow Formula 1 racing, Cricket, and the Olympics with great enthusiasm. I am particularly
+                        excited for the 2028 Los Angeles Olympics.
+                    </p>
+                </div>
+
+                <div class="beyond-tech-card">
+                    <div class="beyond-tech-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>2026 Goals</h3>
+                    <p class="beyond-tech-subtitle">Personal Challenges & Growth</p>
+                    <ul class="beyond-tech-list">
+                        <li class="completed"><i class="fas fa-check-circle"></i> Solved Rubik's Cube under 2 minutes ✓</li>
+                        <li class="in-progress"><i class="fas fa-chart-line"></i> Learning Trading to become a financial wizard</li>
+                        <li class="completed"><i class="fas fa-check-circle"></i> Attended CES (Consumer Electronics Show) ✓</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -473,7 +562,7 @@
                     </div>
                 </a>
 
-                <a href="https://www.linkedin.com/in/niroman-joe-aro-charles/" target="_blank" class="contact-card-link">
+                <a href="https://www.linkedin.com/in/niroman-joe-aro-charles" target="_blank" class="contact-card-link">
                     <div class="contact-card">
                         <div class="contact-card-icon">
                             <i class="fab fa-linkedin"></i>
@@ -497,7 +586,7 @@
             <div class="footer-content">
                 <p>&copy; 2024 Niroman Joe Aro. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/niroman-joe-aro-charles/" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/niroman-joe-aro-charles" target="_blank">LinkedIn</a>
                     <a href="https://github.com/Niroman" target="_blank">GitHub</a>
                     <a href="resume/Niroman_Resume.pdf" target="_blank">Resume</a>
                 </div>
