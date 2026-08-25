@@ -2093,6 +2093,41 @@ section {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 70px 0 30px;
+    }
+
+    .hero-content {
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .hero-text {
+        padding: 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .navbar .container {
         padding: 0.75rem 15px;
     }
@@ -2128,6 +2163,10 @@ section {
 
     .container {
         padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
     }
 
     .image-placeholder {
