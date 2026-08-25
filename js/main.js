@@ -134,3 +134,57 @@ function switchPhoto() {
 
 // Switch every 5 minutes (300000 milliseconds)
 setInterval(switchPhoto, 300000);
+
+// Modal functionality for journey achievements
+const achievements = {
+    qualcomm: {
+        title: 'Senior Cellular Systems Test Engineer',
+        company: 'Qualcomm (2021 - Present)',
+        items: [
+            'Lead 5G NR and LTE modem validation across multiple device platforms',
+            'Developed Python automation frameworks reducing test execution time by 40%',
+            'Implemented QuickSight dashboards for real-time performance monitoring',
+            'Collaborated with cross-functional teams to resolve critical system issues'
+        ]
+    },
+    federated: {
+        title: 'Software Engineer - Wireless Algorithm Development',
+        company: 'Federated Wireless (2019 - 2021)',
+        items: [
+            'Developed optimization algorithms for CBRS base station deployment',
+            'Simulated interference patterns for 6GHz wireless channels',
+            'Built Matlab tools for antenna performance analysis',
+            'Contributed to network planning for dense deployment areas'
+        ]
+    }
+};
+
+function openModal(company) {
+    const modal = document.getElementById('achievementModal');
+    const data = achievements[company];
+
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalCompany').textContent = data.company;
+
+    const list = document.getElementById('modalAchievements');
+    list.innerHTML = '';
+    data.items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        list.appendChild(li);
+    });
+
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('achievementModal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('achievementModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
